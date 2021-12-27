@@ -27,7 +27,7 @@ const Positive = (good, neutral, bad) => {
 }
 
 const Statistics = (props) => {
-if (props.good+props.bad+props.neutral!=0) {
+if (props.good+props.bad+props.neutral!==0) {
       return (
         <div>
           <table>
@@ -35,7 +35,7 @@ if (props.good+props.bad+props.neutral!=0) {
             <StatisticLine text="neutral" value = {props.neutral}/>
             <StatisticLine text="bad" value = {props.bad}/>
             <StatisticLine text="average" value={Average(props.good, props.neutral, props.bad)}/>
-            <StatisticLine text="positive" value={Average(props.good, props.neutral, props.bad)}/>
+            <StatisticLine text="positive" value={Positive(props.good, props.neutral, props.bad)}/>
           </table>
         </div>
       )      
