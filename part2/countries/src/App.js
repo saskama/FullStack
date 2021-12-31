@@ -14,7 +14,7 @@ const Weather = ({capital}) => {
   const [weather, setNewWeather] = useState({})
   const [isLoading, setLoading] = useState(true)
 
-  useEffect(() => {
+  useEffect((capital) => {
   axios
     .get(`http://api.openweathermap.org/data/2.5/weather?units=metric&q=${capital}&appid=${process.env.REACT_APP_API_KEY}`)
     .then(response => {
@@ -33,7 +33,7 @@ const Weather = ({capital}) => {
     <div>
         <h3>Weather in {capital}</h3>
         <p>temperature: {weather.main.temp}</p>
-        <img src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`} />
+        <img src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`} alt="new"/>
         <p>Wind:{weather.wind.speed}</p>
     </div>
   )
