@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 const baseUrl = 'http://localhost:3001/persons'
 
 const getAll = () => {
@@ -20,6 +21,7 @@ const updateNumber = (id, name, number) => {
                      })
 }
 
-export default {getAll, create, deleteNumber, updateNumber}
+const exports = {getAll, create, deleteNumber, updateNumber}
 
+export default exports
 
